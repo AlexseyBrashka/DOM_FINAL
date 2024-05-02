@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши котики</title>
+</head>
+<style>
+    body{
+        background-color:bisque
+    }
+    .alerts{
+        position: relative;
+        text-align: center;
+        width: 1000px;
+        left: 30%;
+        top: 100px;
+    }
+    .alerts p{
+        width: 500px;
+        font-weight: 1000;
+        left: 100px;
+        position: relative;
+        font-size: large;
+    }
+    .alertContainer{
+        width: 700px;
+        height: max-content;
+        position: relative;
+        border: 1px,sandybrown,solid;
+        text-align: center;
+    }
+
+    .alertContainer img{
+        width: 500px;
+    }
+    .alertContainerText{
+        width: 500px;
+        font-weight: 500;
+        left: 70px;
+        position: relative;
+        margin: 20px;
+    }
+    .helpContainer{
+        width: 400px;
+        position: relative;
+        top: -1200px;
+        left: 700px;
+    }
+    .helpContainer p{
+        width: 200px;
+        font-weight: 500;
+        left: 100px;
+        position: relative;
+        font-size: medium;
+    }
+    .helpContainer img{
+        width: 200px;
+    }
+    .anim{
+        width: min-content;
+        left: 25%;
+        position: relative;
+    }
+    .start{
+        animation-name: rotation;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+    header{
+        background-color: rgb(248, 215, 172);
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-around;
+    }
+    header a{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    @keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+
+}
+</style>
+<body>
+    <header>
+        <a href="about.html">
+            <h1>О нас</h1>
+          </a>
+        <a href="index.html">
+            <h1>Котики</h1>
+          </a>
+          <a href="donate.html">
+            <h1>Помочь</h1>
+          </a>
+    </header>
+<div class = "alerts">
+    <p>Те о ком мы заботимся</p>
+    <div class="alertContainer">
+        <img src="https://masyamba.ru/%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%BA%D0%BE%D1%82%D1%8F%D1%82/52-%D0%BC%D0%B8%D0%BB%D1%8B%D0%B9-%D0%BA%D0%BE%D1%82%D0%B5%D0%BD%D0%BE%D0%BA.jpg">
+        <div class="alertContainerText">Это Муся и она жила на улице до 4 лет, неизвесмтно что случилось с ее хозяином но холодной зимой она отморозила лапку
+            и та до сих пор не восстановилась. Мусе нужно время что бы прийти в себя, надеюсь она найдет нового хозяина 
+        </div>
+    </div>
+    <div class="alertContainer">
+        <img src="https://proprikol.ru/wp-content/uploads/2020/08/krasivye-kartinki-kotikov-41.jpg">
+        <div class="alertContainerText">Это толик и он бездомен со своего рождения, к счастью, не безразличные люди нашли его и принеслик  нам.Толик обладает сильным характером и волей
+            он уже 3 года ищет своего нового хозяина
+        </div>
+    </div>
+    <div class="alertContainer">
+        <img src="https://img.razrisyika.ru/kart/24/1200/95244-kotiki-kartinki-14.jpg">
+        <div class="alertContainerText">Это Маша, мы не знаем почему она осталась на улице но в один момент она сама нашла наш приют и вот уже 4 года ищет своего нового хозяина
+        </div>
+    </div>
+    <div class="helpContainer">
+        <p> Помоги приюту и котикам,пожертвуй на корм (ESC чтобы скрыть/показать) </p>
+        <div class="anim">
+        <img src="https://i.imgur.com/PaZmG1U.png">
+        </div>
+    </div>
+</div>
+<script>
+    let money = document.getElementsByClassName('anim')[0]
+    let alertmoney = document.getElementsByClassName('helpContainer')[0]
+    money.addEventListener('mouseenter', e =>{
+        elem = e.target
+        elem.className += ' start'
+    })
+    money.addEventListener('mouseleave', e =>{
+        elem = e.target
+        elem.className = 'anim'
+    })
+    document.body.addEventListener("keydown", function(e) {
+        if (e.key == "Escape"){
+            alertmoney.classList.toggle('hidden')
+        }
+})
+</script>
+</body>
+</html>
